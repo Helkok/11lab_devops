@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from middleware.middleware import DBSessionMiddleware
 
+app = FastAPI()
+app.add_middleware(DBSessionMiddleware)
 
 @app.get("/")
 async def root():
