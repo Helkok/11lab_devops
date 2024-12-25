@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     POSTGRES_URL: Optional[str] = None
 
     JWT_SECRET_KEY: str
-    JWT_ALGORITM: str
+    JWT_ALGORITHM: str
 
     ACCESS_TOKEN_EXPIRES_MIN: int
 
@@ -25,6 +25,4 @@ class Settings(BaseSettings):
         self.POSTGRES_URL = f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_HOST}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
 
 
-
 settings = Settings()
-print(f"Настройки загружены: {settings.model_dump()}")
